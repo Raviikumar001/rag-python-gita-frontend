@@ -54,26 +54,12 @@ export default function PromptInfoPopup() {
             </CardHeader>
             <CardContent>
               <ul className="list-disc pl-4 space-y-2 text-sm text-muted-foreground">
+                <li>Responses my contain errors, be mindful </li>
+                <li>Clearly state which info you're loooking for.</li>
                 <li>
-                  <strong>Specify the API:</strong> Clearly state which API you
-                  need.
+                  Giving a genral prompt might not provide accurate results
                 </li>
-                <li>
-                  <strong>Include Key Details:</strong> Mention relevant info
-                  like filters while prompting.
-                </li>
-                <li>
-                  <strong>List Required Fields:</strong> Specify the data fields
-                  you want.
-                </li>
-                <li>
-                  <strong>For errors:</strong> Specify the exact data required
-                  to resolve the error.
-                </li>
-                <li>
-                  <strong>Be Concise:</strong> Keep prompts focused to ensure
-                  clear responses.
-                </li>
+                <li>Data set used: Gutenberg EBook of The Bhagavad-Gita.</li>
               </ul>
             </CardContent>
             <CardFooter>
