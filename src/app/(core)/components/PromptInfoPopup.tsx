@@ -55,6 +55,7 @@ export default function PromptInfoPopup() {
             <CardContent>
               <ul className="list-disc pl-4 space-y-2 text-sm text-muted-foreground">
                 <li>Responses my contain errors, be mindful </li>
+                <li>All chats are independent of each other </li>
                 <li>Clearly state which info you're loooking for.</li>
                 <li>
                   Giving a genral prompt might not provide accurate results
