@@ -13,8 +13,8 @@ import { useRouter } from "next/navigation";
 import PromptInfoPopup from "./(core)/components/PromptInfoPopup";
 
 const suggestions = [
-  "5 lessions I can implement in my life from gita",
-  "What was the main lession arjun learnt in gita",
+  "5 lessons I can implement in my life from gita",
+  "What was the main lesson Arjun learnt in gita",
   "Who was Arjun",
 ];
 
