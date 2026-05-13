@@ -17,7 +17,7 @@ export default function PromptInfoPopup() {
   useEffect(() => {
     const hasSeenPopup = localStorage.getItem("hasSeenPromptInfo");
     if (!hasSeenPopup) {
-      setShow(true);
+      queueMicrotask(() => setShow(true));
     }
   }, []);
 
@@ -33,38 +33,39 @@ export default function PromptInfoPopup() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 50 }}
-        className="fixed bottom-4 right-4 z-50"
+        className="fixed right-4 top-20 z-50"
       >
-        <Card className="w-[350px] shadow-lg">
+        <Card className="max-h-[calc(100vh-2rem)] w-[min(420px,calc(100vw-2rem))] overflow-y-auto border-white/10 bg-[#1f1f1f] text-white shadow-2xl">
           <CardHeader className="relative pb-2">
             <Button
               variant="ghost"
               size="icon"
-              className="absolute right-2 top-2"
+              className="absolute right-2 top-2 text-zinc-400 hover:bg-white/10 hover:text-white"
               onClick={handleClose}
             >
               <X className="h-4 w-4" />
             </Button>
             <h3 className="font-semibold text-lg">
-              Writing Effective Prompts
+              Better Gita Answers
             </h3>
-            <p className="text-sm text-muted-foreground">
-              Follow these tips for better results
+            <p className="text-sm text-zinc-400">
+              A few notes before you begin
             </p>
           </CardHeader>
           <CardContent>
-            <ul className="list-disc pl-4 space-y-2 text-sm text-muted-foreground">
-              <li>Responses my contain errors, be mindful </li>
-              <li>All chats are independent of each other </li>
-              <li>Clearly state which info you're looking for.</li>
-              <li>
-                Giving a general prompt might not provide accurate results
-              </li>
-              <li>Data set used: Gutenberg EBook of The Bhagavad-Gita.</li>
+            <ul className="list-disc pl-4 space-y-1.5 text-sm text-zinc-400">
+              <li>Ask focused questions for more useful retrieved context.</li>
+              <li>Use chapter and speaker filters when you need precision.</li>
+              <li>Follow-up messages stay linked to the selected session.</li>
+              <li>Responses can contain mistakes, so review important details.</li>
+              <li>Dataset: Gutenberg EBook of The Bhagavad-Gita.</li>
             </ul>
           </CardContent>
           <CardFooter>
-            <Button className="w-full" onClick={handleClose}>
+            <Button
+              className="w-full bg-white text-black hover:bg-zinc-200"
+              onClick={handleClose}
+            >
               Got it
             </Button>
           </CardFooter>

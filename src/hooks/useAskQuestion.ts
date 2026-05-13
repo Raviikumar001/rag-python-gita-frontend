@@ -2,9 +2,18 @@
 
 import { useMutation } from "@tanstack/react-query";
 
+type AskResponse = {
+  answer: string;
+  citations?: unknown[];
+  model_used?: string;
+  context_chunks_used?: number;
+  query_time_ms?: number;
+  session_id: string;
+};
+
 export const useAskQuestion = (
-  onSuccess: (data: any) => void,
-  onError: (error: any) => void
+  onSuccess: (data: AskResponse) => void,
+  onError: (error: Error) => void
 ) => {
   return useMutation({
     mutationFn: async (question: string) => {
