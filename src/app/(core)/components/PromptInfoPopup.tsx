@@ -33,7 +33,7 @@ export default function PromptInfoPopup() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 50 }}
-        className="fixed right-4 top-20 z-50"
+        className="fixed bottom-4 right-4 z-50"
       >
         <Card className="max-h-[calc(100vh-2rem)] w-[min(420px,calc(100vw-2rem))] overflow-y-auto border-white/10 bg-[#1f1f1f] text-white shadow-2xl">
           <CardHeader className="relative pb-2">

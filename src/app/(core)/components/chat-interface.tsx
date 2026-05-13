@@ -433,12 +433,6 @@ export default function ChatInterface() {
                 updatedAt: Date.now(),
               }));
 
-              toast({
-                title: "Answer complete",
-                description: event.query_time_ms
-                  ? `Finished in ${(event.query_time_ms / 1000).toFixed(1)}s.`
-                  : "The answer has finished streaming.",
-              });
             }
           },
           abortRef.current.signal
@@ -669,12 +663,6 @@ export default function ChatInterface() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 p-3">
-          <div className="rounded-lg bg-white/[0.06] p-3 text-xs leading-5 text-zinc-400">
-            Using `/api/v1/ask` with SSE streaming and session IDs for
-            follow-up context.
-          </div>
-        </div>
       </aside>
 
       {isSidebarOpen && (
@@ -858,7 +846,7 @@ export default function ChatInterface() {
                         ) : (
                           <div className="flex items-center gap-2 text-sm text-zinc-400">
                             <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-300" />
-                            Streaming answer...
+                            Looking through the Gita...
                           </div>
                         )}
                       </div>
